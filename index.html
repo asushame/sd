@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{ссылка}">
+    <meta property="og:title" content="название">
+    <meta property="og:description" content="текст">
+    <meta property="og:image" content="{картинка}">
+    <title>PARTY ORGANISER</title>
+    <link rel="stylesheet" href="stylesheets/reset.css">
+      <link href="./stylesheets/style.css" rel="stylesheet" type="text/css"/>
+      <link href="./stylesheets/content.css" rel="stylesheet" type="text/css"/>
+      <script src="javascripts/jquery-3.6.0.js" charset="utf-8"></script>
+      <!-- <script src="javascripts/java-script.js" charset="utf-8"></script> -->
+  </head>
+  <body>
+       <!-- <div class="wrapper"> -->
+      <header class="header">
+  <h1 class="h1">ПАНЕЛЬ УПРАВЛЕНИЯ ВЕЧЕРИНКОЙ</h1>
+  <!-- <a href="" class ="open-popup">О мероприятии</a> -->
+  <button class="open-popup">О мероприятии</button>
+  <div class ="popupbg">
+
+    
+      <div class="popup">
+        <!-- <div class="close-popup"><img src="img/close.svg" alt=""></div> -->
+        <!-- закрыть окно иконка -->
+        <!-- <a href=""class="close-popup" ><img src="img/close.svg" alt=""></a> -->
+    <p class="popup_h1">День святого патрика</p>
+    <p class="popup_h2">В Бейкон Хиллс устраивают вечеринку в стиле Гэтсби. 
+      Приглашен каждый житель города, достигший восемнадцатилетия. 
+      Но неужели несовершеннолетние подростки пропустят такой праздник? Как бы не так!</p>
+   <button type="submit" class="popup-button">Понятно</button>
+    
+
+  </div>
+ 
+    </div>
+      </header>
+      <!-- ОБЩИЙ ДИВ -->
+    <div class="main"> 
+      <!-- ПЕРВЫЙ БЛОК -->
+      <section class="first">
+        <div class="vremya">
+          <div class="cont">
+            <p class="vr">время</p>
+            <p class="ciffra">00:30</p>
+          </div>
+        </div>
+        <div class="balance">
+          <div class="balans">
+            <p class="bal">баланс</p>
+            <p class="cif">4600$</p>
+          </div>
+        </div>
+        <div class="gosti">
+          <div class="gosts">
+            <p class="col">количество гостей</p>
+            <p class="ciff">89</p>
+          </div>
+        </div>
+        <div class="alco">
+          <div class="colicestvo">
+            <p class="colvo">выпито алкоголя</p>
+            <p class="ciff">83</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="second">
+        <!-- ПЛЕЕР -->
+        <div class="player">
+          <!-- плеер заголовки и обложка -->
+          <div class="cover"><img class="cover_img activee" src="img/cover1.png" alt=""></div>
+        <audio class="audio" src="music/Karma Police.mp3"></audio>
+         <div class="text">
+          <p class="artistname">Now playing</p>
+          <p class="songname">Karma Police</p>
+         </div>
+
+         <div class="buttons">
+          <img class="previous" src="img/previous.svg" alt="">
+          <div class="play"><img class="img_src" src="img/play.svg" alt=""></div>
+          <img class="next" src="img/next.svg" alt="">
+
+         </div>
+
+      <div class="progress">
+        <div class="progress_bar"></div>
+      </div>
+      
+
+      </div>
+        <!-- СЛАЙДЕР -->
+        <div class="gallery">
+          <!-- <button class="pre"></button>
+          <button class="forward"></button> -->
+          
+          <div class="kartochka">
+           
+            <p class="slovo">ГАЛЕРЕЯ</p>
+          </div>
+          <img class ="kartinka"src="img/картиночка.svg" alt="">
+        </div>
+
+      </section>
+      <!-- ТУ ДУ ЛИСТ -->
+      <section class="third">
+        <div class="input-field">
+          <textarea placeholder="Добавить задачу" ></textarea>
+        </div>
+
+       <ul class="todoLists">
+        <!-- <li class="list">
+          <input type="checkbox">
+          <span class="task">ПОМЕНЯТЬ МУЗЫКУ</span>
+          <img class="trash" src="img/trash.svg" alt="">
+        </li>
+
+        <li class="list">
+          <input type="checkbox">
+          <span class="task">ПРОСМОТРЕТЬ ГАЛЕРЕЮ</span>
+          <img class="trash" src="img/trash.svg" alt="">
+        </li> -->
+
+        <!-- <li class="list">
+          <input type="checkbox">
+          <span class="task">ПРОСЛЕДИТЬ ЗА АЛКОГОЛЕМ</span>
+          <img class="trash" src="img/trash.svg" alt="">
+        </li> -->
+
+       </ul>
+
+       <div class="pending-tasks">
+        <span>У ВАС <span class="pending-num"> НЕТ </span> НЕВЫПОЛНЕННЫХ ЗАДАЧ </span>
+        <button class="clear-button">УДАЛИТЬ ВСЁ</button>
+       </div>
+
+        <div class="kartochka1">
+          <p class="slovo1">ЗАДАЧИ</p>
+        </div>
+
+      </section>
+      <!-- ЧЕТВЕРТЫЙ БЛОК --------------------------------------------------------------->
+      <section class="fourth">
+        <div class="c1">
+          <div class="kartochka2">
+            <p class="slovo2">АЛКОГОЛЬ</p>
+          </div>
+          <img id="bokal" style="display:none;" src="img/бокал (1).svg" alt="">
+        <div class="one">
+          <span>нажми, чтобы добавить</span>
+          <button type="submit"  onclick="myImg()" class="btn1"><img src="img/Group 269.svg" alt=""></button>
+        </div>
+
+        <script>
+          function myImg(){
+            let elem = document.getElementById('bokal');
+            let style = getComputedStyle(elem);
+            if (style.display === 'none'){
+              document.getElementById('bokal').style.display = 'block';
+            }else if (style.display !== 'none'){
+              document.getElementById('bokal').style.diplay = 'none'
+            }
+          }
+        </script>
+          
+  
+        </div>
+        <div class="c2">
+          <div class="kartochka3">
+            <p class="slovo3">ЗАКУСКИ</p>
+          </div>
+          <img id="myImg1" style="display:none;" src="img/закуски все (1).svg" alt="">
+
+          <div class="two">
+            <span>нажми, чтобы добавить</span>
+            <button type="submit"  onclick="myImg1()" class="btn2"><img src="img/Group 269.svg" alt=""></button>
+          </div>
+
+        </div>
+          <script>
+            function myImg1(){
+              let elem = document.getElementById('myImg1');
+              let style = getComputedStyle(elem);
+              if (style.display === 'none'){
+                document.getElementById('myImg1').style.display = 'block';
+              }else if (style.display !== 'none'){
+                document.getElementById('myImg1').style.diplay = 'none'
+              }
+            }
+          </script>
+          
+        
+  
+        
+        <div class="c3">
+          <div class="kartochka4">
+            <p class="slovo4">НАСТРОЕНИЕ</p>
+          </div>
+          <img id="myImg2" style="display:none;"img src="img/emoji (1).svg" alt="">
+          
+          <div class="three">
+            <span>нажми, чтобы добавить</span>
+            <button type="submit"  onclick="myImg2()" class="btn3"><img src="img/Group 269.svg" alt=""></button>
+          </div>
+           
+          <script>
+            function myImg2(){
+              let elem = document.getElementById('myImg1');
+              let style = getComputedStyle(elem);
+              if (style.display === 'none'){
+                document.getElementById('myImg2').style.display = 'block';
+              }else if (style.display !== 'none'){
+                document.getElementById('myImg2').style.diplay = 'none'
+              }
+            }
+          </script>
+
+        </div>
+
+      </section>
+
+
+      <div>
+        
+         
+    
+      
+  
+    
+     <button class="button">закончить вечеринку </button>
+    </div>
+
+
+    </div>
+    <footer></footer>
+  </div>
+  
+  <script src="javascripts/java-script.js" charset="utf-8"></script>
+  </body>
+  
+</html>

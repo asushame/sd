@@ -1,0 +1,936 @@
+*{
+    box-sizing: border-box;
+}
+body{
+  background-color: black;
+  font-family: "HalvarBreit";
+}
+/* html, body{
+    height: 100%;
+} */
+
+
+
+
+/* Bold */
+@font-face {
+    font-family: "HalvarBreit";
+    font-style: Bold;
+    font-weight: 700;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("HalvarBreit-Bd"),
+         /* Если не получилось, загрузит woff2 */
+         /* url("/fonts/roboto.woff2") format("woff2"), */
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("../fonts/HalvarBreit-Bd.woff") format("woff");
+  }
+  
+  /* Теперь можно использовать шрифт */
+  body {
+    font-family: "HalvarBreit";
+  }
+
+/* Medium */
+  @font-face {
+    font-family: "HalvarBreit";
+    font-style: Medium;
+    font-weight: 500;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("HalvarBreit-Md"),
+         /* Если не получилось, загрузит woff2 */
+         /* url("../fonts/roboto.woff2") format("woff2"), */
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("/fonts/HalvarBreit-Md.woff") format("woff");
+  }
+  
+  /* Теперь можно использовать шрифт */
+  body {
+    font-family: "HalvarBreit";
+  }
+
+/* Regular */
+@font-face {
+    font-family: "HalvarBreit";
+    font-style: Normal;
+    font-weight: 300;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("HalvarBreit-Rg"),
+         /* Если не получилось, загрузит woff2 */
+         /* url("/fonts/roboto.woff2") format("woff2"), */
+         /* Если браузер не поддерживает woff2, загрузит woff */
+         url("/..fonts/HalvarBreit-Rg.woff") format("woff");
+  }
+  
+  /* Теперь можно использовать шрифт */
+  body {
+    font-family: "HalvarBreit";
+  }
+
+.header{
+  max-width: 1820px;
+  min-height: 216px;
+  background-color: black;
+  margin: 0px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+.h1{
+  font-size: 5rem;
+  color: white;
+  font-weight: 700;
+  padding-top: 70px;
+  /* padding-left: 135px; */
+}
+
+
+
+
+
+.open-popup{
+  color: rgba(255, 255, 255, 0.79);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  padding-top: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "HalvarBreit";
+}
+
+.popupbg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100vh;
+  background: rgba(0, 0, 0, 0.66);
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .8s ease 0s;
+
+
+}
+.popupbg.active{
+  visibility: visible;
+  opacity: 1;
+}
+
+.popupbg.active .popup{
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+
+.popup{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1549FE;
+  width: 60%;
+  height: 40%;
+  padding: 25px;
+  border-radius: 12px;
+  transition: all .8s ease 0s;
+  opacity: 0;
+
+}
+
+.close-popup{
+  position: absolute;
+top: 10%;
+right:5%;
+}
+
+.popup_h1{
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  font-size: 40px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.popup_h2{
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  font-size: 24px;
+  font-weight: 300;
+  color: #FFFFFF;
+  right:10%;
+}
+.popup-button{
+  position: absolute;
+  top: 75%;
+  left: 5%;
+  width: 23%;
+  height:16%;
+  border-radius: 7px;
+  border: 2px solid #FFFFFF;
+  background: #FFFFFF;
+  color: #1549FE;
+  font-size: 24px;
+  font-family: "HalvarBreit";
+  cursor: pointer;
+}
+
+.popup-button:hover{
+  background:#1549FE; 
+  color: #FFFFFF;
+  transition: 0.5s all;
+}
+
+
+.main{
+  height: 2100px;
+  max-width: 1820px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0px auto;
+}
+/* ---------------------------АДАПТИВ МОБИЛКА */
+@media(max-width: 430px){
+  .main{
+    height: 1800px;
+    max-width: 414px;
+    margin: 0px auto;
+    margin: 0px;
+    
+  }
+}
+
+/* первый блок */
+.first{
+  height: 202px;
+  max-width: 1820px;
+  display: flex;
+  flex-direction: row;
+  gap:30px;
+  /* background-color: red; */
+  margin: 0px auto;
+}
+
+@media screen and (max-width: 700px) and (min-width: 600px){
+    .first{
+      width: 580px;
+      height: 280px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+  
+    }
+    .h1{
+      font-size: 45px;
+    }
+  
+}
+
+
+@media screen and (max-width: 600px) and (min-width: 370px){
+  .first{
+    width: 385px;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+
+  }
+  .h1{
+    font-size: 35px;
+  }
+  
+}
+
+
+
+
+
+.vremya{
+  width: 433px;
+  height: 202px;
+  background-color: #1549FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.5px solid #FFFFFF;
+  border-radius: 8px;
+
+}
+@media screen and (max-width: 700px) and (min-width: 600px){
+  .vremya{
+    width: 280px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 600px) and (min-width: 370px){
+  .vremya{
+    width: 187px;
+    height: 88px;
+  }
+}
+
+
+
+
+
+
+
+
+.cont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.balance{
+  width: 433px;
+  height: 202px;
+  background-color: #1549FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.5px solid #FFFFFF;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 700px) and (min-width: 600px){
+  .balance{
+    width: 280px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 370px){
+  .balance{
+    width: 187px;
+    height: 88px;
+  }
+}
+
+
+
+
+
+
+.balans{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+
+}
+
+.gosti{
+  width: 433px;
+  height: 202px;
+  background-color: #1549FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.5px solid #FFFFFF;
+  border-radius: 8px;
+}
+
+/* АДАПТИВ МОБИЛКА */
+@media screen and (max-width: 700px) and (min-width: 600px){
+  .gosti{
+    width: 280px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 370px){
+  .gosti{
+    width: 187px;
+    height: 88px;
+  }
+}
+
+/* @media only screen and (max-width: 600px){
+  .gosti{
+    width: 280px;
+    height: 150px;
+  }
+} */
+
+.gosts{
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.alco{
+  width: 432px;
+  height: 202px;
+  background-color: #1549FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.5px solid #FFFFFF;
+  border-radius: 8px;
+}
+/* АДАПТИВ МОБИЛКА */
+@media screen and (max-width: 700px) and (min-width: 600px){
+  .alco{
+    width: 280px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 370px){
+  .alco{
+    width: 187px;
+    height: 88px;
+  }
+}
+
+/* @media only screen and (max-width: 600px){
+  .alco{
+    width: 280px;
+    height: 150px;
+  }
+} */
+
+.colicestvo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ВТОРОЙ БЛОК */
+.second{
+  max-width: 1820px;
+  height: 519px;
+  display: flex;
+  flex-direction: row;
+  gap:30px;
+  margin: 0px auto;
+ 
+}
+
+/* АДАПТИВ ПЛАНШЕТ */
+
+/* АДАПТИВ МОБИЛКА */
+/* @media only screen and(max-width: 430px){
+  .second{
+    height: 525px;
+    max-width: 308px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40px;
+
+  }
+} */
+
+@media screen and (max-width: 600px) and (min-width: 370px){
+  .second{
+    max-width: 380px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+    position: relative;
+  }
+}
+
+/* ПЛЕЕР */
+.player{
+  width: 1180px;
+  height: 479px;
+ margin-top:40px;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  color: #FFFFFF;
+  position: relative;
+  
+  
+}
+
+
+@media screen and (max-width: 600px) and (min-width: 370px){
+  .player{
+    max-width: 380px;
+    height: 239px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   
+  }
+}
+.cover{
+  position: absolute;
+  margin-top: 100px;
+  padding-left: 5%;
+}
+.activee
+  {
+    animation:rotateAnimation 3s infinite;
+  }
+
+
+@keyframes rotateAnimation{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.text{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 50px;
+  padding-left: 30%;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  padding-top: 220px;
+  padding-left: 30%;
+  cursor: pointer;
+}
+
+.progress{
+  background-color:#D9D9D9;
+  height: 5px;
+  width: 50%;
+  margin-left: 30%;
+  border-radius: 4px;
+  margin-top: 50px;
+  
+}
+
+.progress_bar{
+  background-color: #FF3FCB;
+  height: 5px;
+  /* width: 20%; */
+  border-radius: 4px;
+  
+}
+
+/* ГАЛЕРЕЯ */
+.gallery{
+  width: 600px;
+  height: 479px;
+ margin-top:40px;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  position: relative;
+}
+
+
+
+@media screen and (max-width: 600px) and (min-width: 370px){
+  .gallery{
+    max-width: 380px;
+    height: 239px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  
+  }
+}
+
+.kartinka{
+  position: absolute;
+  margin-left: 147px;
+  margin-top: 127px;
+}
+
+.kartochka{
+position: absolute;
+width: 112px;
+height: 25px;
+background-color: #FF3FCB;
+border-radius: 8px;
+display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  margin-left: 45px;
+  z-index: 0;
+}
+.slovo{
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* --0-----------------------------------------------------ТРЕТИЙ БЛОК!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.third{
+  max-width: 1820px;
+  margin: 0px auto;
+  height: 479px;
+  background-color: #FF3FCB;
+  margin-top: 40px;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  position: relative;
+}
+
+@media only screen and (max-width: 430px){
+  .third{
+    max-width: 308px;
+    height: 259px;
+    /* margin: 0px; */
+    margin-top: 25px;
+    /* margin: 0px auto; */
+
+  }
+}
+.input-field{
+  width: 400px;
+  height: 52px;
+  background-color: none;
+  /* border: 1px solid #FFFFFF;
+  border-radius: 8px; */
+  position: absolute;
+  margin-top: 45px;
+  margin-left: 290px;
+}
+.input-field textarea{
+  height: 100%;
+  width: 100%;
+  background-color: #FF3FCB;
+  border-style: none;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 18px;
+  resize: none;
+  outline: none;
+}
+textarea::-webkit-scrollbar{
+  display: none;
+}
+.todoLists{
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 290px;
+  
+}
+.todoLists .list{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  background-color: black;
+  color: #FFFFFF;
+  padding: 22px;
+  border-radius: 13px;
+  width: 1200px;
+  margin-top: 20px;
+  position: relative;
+  gap: 40px;
+  cursor: pointer;
+
+}
+.trash{
+  position: absolute;
+  right: 20px;
+}
+
+.pending-tasks{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 755px;
+  margin-top: 400px;
+  margin-left: 290px;
+}
+.pending-tasks span{
+  color:white ;
+  font-size: 14px;
+}
+.pending-tasks .clear-button{
+  padding: 12px 26px;
+  border-radius: 8px;
+  border-color: white;
+ 
+  background-color: #FFFFFF;
+  font-size: 14px;
+  font-family: 'HalvarBreit';
+}
+.clear-button:hover{
+  background-color: #FF3FCB;
+  border-color: white;
+}
+
+
+
+.todoLists .list input{
+  height: 28px;
+  min-width: 28px;
+  accent-color: #FF3FCB;
+  border-radius: 4px;
+  pointer-events: none;
+}
+.list input:checked ~ .task{
+  text-decoration: line-through;
+}
+.kartochka1{
+  position: absolute;
+  width: 106px;
+  height: 25px;
+  background-color: black;
+  border-radius: 8px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 45px;
+  }
+  .slovo1{
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+/* ЧЕТВЕРТЫЙ БЛО------------------------------------------------------------------------------------------OК */
+.fourth{
+  position: relative;
+  max-width: 1820px;
+  margin: 0px auto;
+  height: 624px;
+  display: flex;
+  flex-direction: row;
+  gap:30px;
+}
+
+@media only screen and (max-width: 430px){
+  .fourth{
+    width: 308px;
+    height: 827px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+  }
+}
+
+.c1{
+  width: 583px;
+  height: 583px;
+  background-color:#1549FE;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  margin-top: 40px;
+  position: relative;
+}
+/* МОБИЛКА */
+@media only screen and (max-width: 430px){
+  .c1{
+    width: 308px;
+    height: 259px;
+    margin: 0px;
+  }
+}
+#bokal{
+  position: absolute;
+  margin-left: 150px;
+}
+.kartochka2{
+  position: absolute;
+  width: 130px;
+  height: 25px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 45px;
+  }
+  .slovo2{
+    color: #1549FE;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+.one{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 450px;
+  gap: 125px;
+  }
+
+.btn1{
+  outline: none;
+  margin: 0; 
+  padding: 0; 
+  border: 0;  
+  background-color: transparent;
+}
+.c2{
+  width: 583px;
+  height: 583px;
+  background-color:black;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  margin-top: 40px;
+  position: relative;
+}
+
+@media only screen and (max-width: 430px){
+  .c2{
+    width: 308px;
+    height: 259px;
+    margin: 0px;
+  }
+}
+/* .c2 span{
+  position: absolute;
+  margin-top: 105px;
+  margin-left: 45px;
+} */
+.two{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 450px;
+  gap: 125px;
+  margin-left: 73px;
+ 
+ 
+  }
+  #myImg1{
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 40px;
+  }
+
+.btn2{
+  outline: none;
+  margin: 0; 
+  padding: 0; 
+  border: 0;  
+  background-color: transparent;
+}
+
+
+  .two span{
+    color: #FFFFFF;
+  }
+
+.kartochka3{
+  position: absolute;
+  width: 120px;
+  height: 25px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 45px;
+  }
+  .slovo3{
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+
+.c3{
+  position: relative;
+  width: 583px;
+  height: 583px;
+  background-color:#FF3FCB;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 430px){
+  .c3{
+    width: 308px;
+    height: 259px;
+    margin: 0px;
+  }
+}
+
+.kartochka4{
+  position: absolute;
+  width: 156px;
+  height: 25px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 45px;
+  }
+  .slovo4{
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .three{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 450px;
+    gap: 125px;
+    margin-left: 73px;
+    }
+    #myImg2{
+      position: absolute;
+      margin-top: 41px;
+      margin-left: 161px;
+      
+      margin-top: 122px;
+    }
+  
+  .btn3{
+    outline: none;
+    margin: 0; 
+    padding: 0; 
+    border: 0;  
+    background-color: transparent;
+  }
+
+  .button{
+    width: 100%;
+    height: 100px;
+    background: #1549FE;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 40px;
+    margin-top: 40px;
+    cursor: pointer;
+    font-family:'HalvarBreit' ;
+    border-radius: 10px;
+    border: none;
+  }
